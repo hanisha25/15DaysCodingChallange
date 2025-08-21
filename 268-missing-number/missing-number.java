@@ -1,17 +1,12 @@
 class Solution {
     public int missingNumber(int[] nums) {
-        boolean[] vis=new boolean[nums.length+1];
-        for(int i=0;i<nums.length;i++)
+        int n=nums.length;
+        int sum=0;
+        for(int a:nums)
         {
-            vis[nums[i]]=true;
+            sum+=a;
         }
-        for(int i=0;i<vis.length;i++)
-        {
-            if(!vis[i])
-            {
-                return i;
-            }
-        }
-        return -1;
+        int miss=(n*(n+1)/2)-sum;
+        return miss;
     }
 }
