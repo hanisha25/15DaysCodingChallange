@@ -1,11 +1,12 @@
 class Solution {
     public boolean isPalindrome(int x) {
-        int cur=x;
+        int n=x;
         int rev=0;
-        while(cur>0){
-            int n=cur%10;
-            rev=rev*10+n;
-            cur=cur/10;
+        while(n>0)
+        {
+            int temp=n%10;
+            rev=rev*10+temp;
+            n=n/10;
         }
         return rev==x;
     }
