@@ -5,17 +5,7 @@ class Solution {
         for (int i = 0; i < n; i++) {
             arr[i] = "" + nums[i];
         }
-        Arrays.sort(arr, (a, b) -> {
-            String x = a + b;
-            String y = b + a;
-            if (x.compareTo(y) < 0) {
-                return 1;
-            } else if (x.compareTo(y) > 0) {
-                return -1;
-            } else {
-                return 0;
-            }
-        });
+        Arrays.sort(arr, (a, b) -> (b+a).compareTo(a+b));
         StringBuilder sb = new StringBuilder();
         for (String st : arr) {
             sb.append(st);
