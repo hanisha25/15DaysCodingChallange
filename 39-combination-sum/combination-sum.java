@@ -2,23 +2,20 @@ class Solution {
     List<List<Integer>> res;
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
         res=new ArrayList<>();
-        sum(candidates,0,0,target,new ArrayList<>());
+        recursion(candidates,0,0,target,new ArrayList<>());
         return res;
     }
-    public void sum(int[] candidates,int idx,int sum, int target,ArrayList<Integer> list)
+    public void recursion(int[] candidates,int idx,int sum, int target,List<Integer> list)
     {
         if(idx==candidates.length && sum==target)
         {
             res.add(new ArrayList<>(list));
-            return;
         }
-        if(idx==candidates.length || sum>target)
-        {
-            return;
-        }
+        if(sum>target) return;
+        if(idx==candidates.length) return;
         list.add(candidates[idx]);
-        sum(candidates,idx,sum+candidates[idx],target,list);
+        recursion(candidates,idx,sum+candidates[idx],target,list);
         list.remove(list.size()-1);
-        sum(candidates,idx+1,sum,target,list);
+        recursion(candidates,idx+1,sum,target,list);
     }
 }
