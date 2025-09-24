@@ -3,9 +3,16 @@ class Solution {
         int i=0;
         for(int j=0;j<nums.length;j++)
         {
-            if(nums[i]!=nums[j])
+            if(nums[i]==nums[j])
             {
-                nums[++i]=nums[j];
+                continue;
+            }
+            else
+            {
+               i++;
+               int temp=nums[j];
+               nums[j]=nums[i];
+               nums[i]=temp;
             }
         }
         return i+1;
