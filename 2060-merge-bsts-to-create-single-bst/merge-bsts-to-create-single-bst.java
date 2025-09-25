@@ -37,11 +37,11 @@ class Solution {
             TreeNode cur=trees.get(i);
             if(!set.contains(cur.val))
             {
-                // if(par!=null)  return null;
                 par=cur;
                 break;
             }
         }
+        if(par==null) return null;
         for(int i = 0; i<trees.size(); i++){
             TreeNode temp = trees.get(i);
             map.put(temp.val, temp);
