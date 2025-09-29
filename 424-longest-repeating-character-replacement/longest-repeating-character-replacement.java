@@ -7,8 +7,7 @@ class Solution {
        {
             freq[s.charAt(high)-'A']++;
             max_freq=Math.max(max_freq,freq[s.charAt(high)-'A']);
-            window_size=high-low+1;
-            if(window_size-max_freq>k)
+            while((high-low+1)-max_freq>k)
             {
                 freq[s.charAt(low)-'A']--;
                 low++;
