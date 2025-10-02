@@ -4,8 +4,7 @@ class Solution {
         int[] freq=new int[26];
         for(int i=0;i<s.length();i++)
         {
-            char ch=s.charAt(i);
-            freq[ch-'a']++;
+            freq[s.charAt(i)-'a']++;
             q.add(i);
             while(!q.isEmpty() && freq[s.charAt(q.peek())-'a']>1)
             {
