@@ -5,13 +5,13 @@ class Solution {
         res[0]=1;
         for(int i=1;i<n;i++)
         {
-           res[i]=nums[i-1]*res[i-1];
+            res[i]=res[i-1]*nums[i-1];
         }
-        int add=nums[n-1];
-        for(int k=n-2;k>=0;k--)
+        int suffix=nums[n-1];
+        for(int i=n-2;i>=0;i--)
         {
-            res[k]*=add;
-            add*=nums[k];
+            res[i]*=suffix;
+            suffix*=nums[i];
         }
         return res;
     }
