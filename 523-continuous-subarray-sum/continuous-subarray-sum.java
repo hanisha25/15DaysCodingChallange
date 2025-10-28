@@ -14,7 +14,7 @@ class Solution {
                     return true;
                 }
             }
-            if (!map.containsKey(sum)) {
+            else {
                 map.put(sum, i);
             }
         }
