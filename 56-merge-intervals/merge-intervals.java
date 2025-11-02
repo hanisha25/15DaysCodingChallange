@@ -1,9 +1,10 @@
 class Solution {
     public int[][] merge(int[][] intervals) {
-        Arrays.sort(intervals,(a,b)->Integer.compare(a[0],b[0]));
+        int n=intervals.length;
+        Arrays.sort(intervals,(a,b)->(a[0]-b[0]));
         int[] cur=intervals[0];
-        List<int[]> list=new ArrayList<int[]>();
-        for(int i=1;i<intervals.length;i++)
+        ArrayList<int[]> list=new ArrayList<>();
+        for(int i=1;i<n;i++)
         {
             if(intervals[i][0]<=cur[1])
             {
@@ -17,10 +18,7 @@ class Solution {
         }
         list.add(cur);
         int[][] res=new int[list.size()][2];
-        for(int i=0;i<list.size();i++)
-        {
-            res[i]=list.get(i);
-        }
+        list.toArray(res);
         return res;
     }
 }
