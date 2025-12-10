@@ -5,9 +5,9 @@ class Solution {
         {
             if(nums[j]!=0)
             {
-                int temp=nums[j];
-                nums[j]=nums[i];
-                nums[i]=temp;
+                int temp=nums[i];
+                nums[i]=nums[j];
+                nums[j]=temp;
             }
             if(nums[i]!=0)
             {
